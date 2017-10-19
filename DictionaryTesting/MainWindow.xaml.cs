@@ -58,7 +58,7 @@ namespace DictionaryTesting
 
         public string[] Labels
         {
-            get { return new string[2] { "01.01.2017", "02.01.2017" }; }
+            get { return new string[2] { "01.01.2017", "02.01.2017" }; } 
         }
 
         public ChartValues<int> L
