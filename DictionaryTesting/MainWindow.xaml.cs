@@ -49,6 +49,7 @@ namespace DictionaryTesting
             DateTime d1 = new DateTime(0002, 1, 1);
             DateTime d2 = d1.Subtract(new TimeSpan(365, 0, 0, 0, 0));
             DateTime d4 = d1.Subtract(new TimeSpan(365, 0, 0, 0, 0));
+
         }
 
         public Dictionary<int, int> Test
@@ -64,6 +65,13 @@ namespace DictionaryTesting
         public ChartValues<int> L
         {
             get { return new ChartValues<int> { 10, 20, 30,40,50,60 }; }
+        }
+
+
+        public Tuple<ChartValues<int>,string[]> GetData()
+        {
+
+            return Tuple.Create(new ChartValues<int>(), new string[5]);
         }
     }
 }
