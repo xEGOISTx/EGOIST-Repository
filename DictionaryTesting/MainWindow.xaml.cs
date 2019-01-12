@@ -24,6 +24,8 @@ namespace DictionaryTesting
     {
         Dictionary<int, int> test = new Dictionary<int, int>();
         LiveCharts.Wpf.ColumnSeries colS;
+
+        List<IA> _a = new List<IA>();
        
 
         public MainWindow()
@@ -37,6 +39,27 @@ namespace DictionaryTesting
             //colS.Values = new ChartValues()
             ///ch.Series.Add(colS)
            // Method();
+
+            _a.Add(new B());
+            //_a.Add(new C());
+
+            B b = Get<B>();
+            C c = Get<C>();
+
+
+        }
+
+        public T Get<T>()
+        {
+            foreach(IA a in _a)
+            {
+                if(a is T)
+                {
+                    return (T)a;
+                }
+            }
+
+            return default(T);
         }
 
         void Method()
@@ -73,5 +96,34 @@ namespace DictionaryTesting
 
             return Tuple.Create(new ChartValues<int>(), new string[5]);
         }
+
+        
     }
+
+    public interface IA
+    {
+
+    }
+
+    public interface IB : IA
+    {
+        string Bb { get; }
+    }
+
+    public interface IC : IA
+    {
+        string Cc { get; }
+    }
+
+    public class B: IB
+    {
+        public string Bb { get; }
+    }
+
+    public class C : IC
+    {
+        public string Cc { get; }
+    }
+
+
 }
