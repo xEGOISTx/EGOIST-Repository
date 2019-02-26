@@ -26,9 +26,9 @@ namespace DictionaryTesting
         LiveCharts.Wpf.ColumnSeries colS;
 
         List<IA> _a = new List<IA>();
-       
+		List<IA> _b = new List<IA>();
 
-        public MainWindow()
+		public MainWindow()
         {
             InitializeComponent();
 
