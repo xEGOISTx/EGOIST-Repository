@@ -1,0 +1,39 @@
+﻿<Window x:Class="DictionaryTesting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DictionaryTesting"
+        xmlns:chart ="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:chart2 ="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+     
+    <Grid>
+        <chart:CartesianChart Name="ch" Margin="10, 0, 10, 20"  Hoverable="False" DataTooltip="{x:Null}" Width="600">
+            <chart:CartesianChart.Series>
+                <chart:ColumnSeries Values="{Binding Path=L}"  MaxColumnWidth="20" DataLabels="True"/>
+            </chart:CartesianChart.Series>
+
+            <chart:CartesianChart.AxisX>
+                <chart:Axis LabelsRotation="60" Labels="{Binding Labels}" Position="LeftBottom" MinValue="0" FontSize="15">
+                    <chart:Axis.Separator >
+                        <chart:Separator Step="1"></chart:Separator>
+                    </chart:Axis.Separator>
+                </chart:Axis>
+            </chart:CartesianChart.AxisX>
+            
+            <chart:CartesianChart.AxisY>
+                <chart:Axis MaxValue="100" Title="Эффективность" FontSize="15"/>
+            </chart:CartesianChart.AxisY>
+
+        </chart:CartesianChart>
+
+        <!--<chart2:Chart Name="ch" >
+
+
+        </chart2:Chart>-->
+    </Grid>
+    </ScrollViewer>
+</Window>
